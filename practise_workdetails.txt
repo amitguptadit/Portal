@@ -1,0 +1,25 @@
+[A]	Workflow for running microservices :-
+	1.niit-dbs-euraka-server
+	2.producer-service
+	3.consumer-service
+[B].	Change Default Tomcat Port in Spring Boot.
+
+1- application.properties
+Create application.properties file under src/main/resources and define server.port attribute inside it:
+application.properties
+server.port=9090
+
+2- Command line
+The third way is to set the port explicitly when starting up the application through the command line, you can do this in 2 different ways:
+java -Dserver.port=9090 -jar executable.jar
+java -jar executable.jar –server.port=9090
+The port defined using this way overrides any other ports defined through other ways.
+
+3- With Euraka Server.
+
+2019-05-29 05:46:35.620  INFO 6320 --- [  restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8761 (http)
+2019-05-29 05:46:35.621  INFO 6320 --- [  restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8761
+
+
+
+http://localhost:8761/producer/sortedBySalary
